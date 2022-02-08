@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EspecesService } from '../../services/especes.service';
 
 @Component({
   selector: 'app-liste-especes',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeEspecesComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  data: any;
+  constructor(private especeData:EspecesService) {}
+  ngOnInit() {
+    this.especeData.getEspeces().subscribe((result) => {
+      /* console.warn("result", result); */
+      this.data = result;
+    })
   }
+
 
 }

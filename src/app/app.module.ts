@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatRadioModule } from '@angular/material/radio';
 import { ListeEspecesComponent } from './components/liste-especes/liste-especes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [AppComponent, ListeEspecesComponent],
@@ -14,6 +16,8 @@ import { ListeEspecesComponent } from './components/liste-especes/liste-especes.
     AppRoutingModule,
     BrowserAnimationsModule,
     MatRadioModule,
+    HttpClientModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
