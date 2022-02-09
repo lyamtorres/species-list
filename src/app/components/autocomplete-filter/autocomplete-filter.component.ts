@@ -25,7 +25,7 @@ export class AutocompleteFilterComponent implements OnInit {
       this.data = result["data"];
 
       for (const element of this.data) {
-        this.options.push(element.frenchName);
+        this.options.push(`${element.frenchName} - ${element.faoCode}` );
       }
       console.log(this.options);
     });
