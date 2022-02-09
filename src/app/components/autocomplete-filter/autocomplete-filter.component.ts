@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { EspecesService } from '../../services/especes.service';
 
 /**
  * @title Filter autocomplete
@@ -12,11 +13,23 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./autocomplete-filter.component.scss']
 })
 export class AutocompleteFilterComponent implements OnInit {
+  data: any;
   myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
+  options: string[] = [];
   filteredOptions: Observable<string[]>;
 
+  constructor(private especeData:EspecesService) {}
+
   ngOnInit() {
+    this.especeData.getEspeces().subscribe((result) => {
+      this.data = result;
+
+      for (const element of this.data) {
+        this.options.push(element.title);
+      }
+      console.log(this.options);
+    });
+
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value)),
