@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class EspecesService {
-  url="https://jsonplaceholder.typicode.com/posts"
+  url="https://services-fish-price-dev.sinay.ai/seafoods"
   constructor(private http:HttpClient) { }
 
   getEspeces() {

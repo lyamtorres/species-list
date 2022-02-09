@@ -22,10 +22,10 @@ export class AutocompleteFilterComponent implements OnInit {
 
   ngOnInit() {
     this.especeData.getEspeces().subscribe((result) => {
-      this.data = result;
+      this.data = result["data"];
 
       for (const element of this.data) {
-        this.options.push(element.title);
+        this.options.push(element.frenchName);
       }
       console.log(this.options);
     });
