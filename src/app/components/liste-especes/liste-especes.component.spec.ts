@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListeEspecesComponent } from './liste-especes.component';
+import { AutocompleteFilterComponent } from './liste-especes.component';
 
-describe('ListeEspecesComponent', () => {
-  let component: ListeEspecesComponent;
-  let fixture: ComponentFixture<ListeEspecesComponent>;
+describe('AutocompleteFilterComponent', () => {
+  let component: AutocompleteFilterComponent;
+  let fixture: ComponentFixture<AutocompleteFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListeEspecesComponent ]
+      declarations: [ AutocompleteFilterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListeEspecesComponent);
+    fixture = TestBed.createComponent(AutocompleteFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
