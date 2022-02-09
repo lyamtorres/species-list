@@ -12,7 +12,6 @@ export class ListeEspecesComponent implements OnInit {
   constructor(private especeData:EspecesService) {}
   ngOnInit() {
     this.especeData.getEspeces().subscribe((result) => {
-      /* console.warn("result", result); */
       this.data = result;
     })
   }
