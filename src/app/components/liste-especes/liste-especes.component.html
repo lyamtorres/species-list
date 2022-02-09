@@ -4,12 +4,11 @@
       <input type="text"
              placeholder="Rechercher par espèce ou code FAO"
              matInput
-             [formControl]="myControl"
-             [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+             [formControl]="myControl">
+      <mat-list>
+        <mat-list-item *ngFor="let option of filteredOptions | async" [value]="option">
           {{option}}
-        </mat-option>
-      </mat-autocomplete>
+        </mat-list-item>
+      </mat-list>
     </mat-form-field>
   </form>
